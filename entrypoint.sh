@@ -15,7 +15,7 @@ Rscript -e 'sessionInfo()'
 # Check for build only
 if [ "$1" = "build" ]; then
     echo "\e[33m\e[1mRunning only build task"
-    R CMD build --no-build-vignette ./
+    R CMD build --no-build-vignettes ./
 fi
 
 # Build and check
