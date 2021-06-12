@@ -6,7 +6,7 @@ apt-get update
 DEBIAN_FRONTEND=noninteractive apt-get install -y r-base
 apt-get install -y r-base r-base-dev r-cran-xml r-cran-rmarkdown libcurl4-openssl-dev
 apt-get install -y libssl-dev libxml2-dev
-apt-get install -y xml2 
+apt-get install -y xml2 pandoc
 apt-get install -y r-cran-tidyverse r-cran-domc r-cran-glmnet r-cran-rms r-cran-corrplot 
 
 echo "\e[33m\e[1mR session information"
