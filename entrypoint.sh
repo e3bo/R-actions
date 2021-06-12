@@ -4,11 +4,10 @@
 echo "\e[1mInstalling R and dependencies"
 apt-get update
 DEBIAN_FRONTEND=noninteractive apt-get install -y r-base
-apt-get install -y r-base r-base-dev r-cran-xml r-cran-rjava libcurl4-openssl-dev
-apt-get install -y libssl-dev libxml2-dev openjdk-7-* libgdal-dev libproj-dev libgsl-dev
-apt-get install -y xml2 default-jre default-jdk mesa-common-dev libglu1-mesa-dev freeglut3-dev 
-apt-get install -y mesa-common-dev libx11-dev r-cran-rgl r-cran-rglpk r-cran-rsymphony r-cran-plyr 
-apt-get install -y  r-cran-reshape  r-cran-reshape2 r-cran-rmysql
+apt-get install -y r-base r-base-dev r-cran-xml r-cran-rmarkdown libcurl4-openssl-dev
+apt-get install -y libssl-dev libxml2-dev
+apt-get install -y xml2 
+apt-get install -y r-cran-tidyverse r-cran-domc r-cran-glmnet r-cran-rms r-cran-corrplot 
 
 echo "\e[33m\e[1mR session information"
 Rscript -e 'sessionInfo()'
@@ -16,7 +15,7 @@ Rscript -e 'sessionInfo()'
 # Check for build only
 if [ "$1" = "build" ]; then
     echo "\e[33m\e[1mRunning only build task"
-    R CMD build ./
+    R CMD build --no-build-vignette ./
 fi
 
 # Build and check
